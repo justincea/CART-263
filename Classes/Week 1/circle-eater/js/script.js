@@ -36,10 +36,6 @@ let food = {
 //
 // Not needed
 
-function preload() {
-
-}
-
 
 // setup()
 //
@@ -83,7 +79,7 @@ function updatePlayer() {
   // Shrink the player and use constrain() to keep it to reasonable bounds
   player.size = constrain(player.size - PLAYER_SIZE_LOSS, 0, player.maxSize);
   if (player.size === 0) {
-    player.active = false;
+    player.active = false;// Checks if Player is Dead?
   }
 }
 
