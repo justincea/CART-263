@@ -3,7 +3,8 @@
 /********************************************************************
 
 Pixel painter
-Pippin Barr
+Assignment 1
+Justin Cea
 
 A small DOM-based program for "painting" on div-based pixels.
 
@@ -45,11 +46,20 @@ function paint(e) {
   // save that into a variable for clarity.
   let pixel = e.target;
   // Change the background color of the element to white
-  pixel.style.backgroundColor = PAINT_COLOR;
+  pixel.style.backgroundColor = RandomColor();
   // Set a timeout to call the reset function after a delay
   // When we pass additional parameters (like 'pixel' below) they
   // are passed to the callback function (resetPixel)
   setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
+}
+
+function RandomColor() { // random color code restrived from: https://stackoverflow.com/questions/1484506/random-color-generator
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 // resetPixel
