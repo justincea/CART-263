@@ -1,0 +1,12 @@
+body {
+}
+
+.redacted{
+  background-color: black;
+  color: transparent;
+}
+
+.revealed{
+  background-color: transparent;
+  color:red;
+}

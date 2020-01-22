@@ -13,12 +13,12 @@ A small DOM-based program for "painting" on div-based pixels.
 // Constants
 const NUM_PIXELS = 1000;
 const PIXEL_REVERT_DELAY = 1000;
-const DEFAULT_COLOR = 'black';
-const PAINT_COLOR = 'white';
+const DEFAULT_COLOR = "black";
+const PAINT_COLOR = "white";
 
 // Set up our starting function for when the page loads
 window.onload = setup;
-
+let rotation = 0;
 // setup
 //
 // Adds DIVs to the page along with event listeners that will allow
@@ -27,14 +27,17 @@ function setup() {
   // A loop that runs once per pixel we need
   for (let i = 0; i < NUM_PIXELS; i++) {
     // Create a DIV and store it in a variable
-    let pixel = document.createElement('div');
+    let pixel = document.createElement("div");
     // Add the 'pixel' class to the new element
-    pixel.setAttribute('class', 'pixel');
+    pixel.setAttribute("class", "pixel");
     // Add a mouseover handler to the new element
-    pixel.addEventListener('mouseover', paint);
+    pixel.addEventListener("mouseover", paint);
+
     // Add the element to the body of the page
     document.body.appendChild(pixel);
   }
+
+  document.addEventListener("keydown", rotate);
 }
 
 // paint
@@ -53,9 +56,10 @@ function paint(e) {
   setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
 }
 
-function RandomColor() { // random color code restrived from: https://stackoverflow.com/questions/1484506/random-color-generator
-  var letters = '0123456789ABCDEF';
-  var color = '#';
+function RandomColor() {
+  // random color code restrived from: https://stackoverflow.com/questions/1484506/random-color-generator
+  var letters = "0123456789ABCDEF";
+  var color = "#";
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -67,4 +71,19 @@ function RandomColor() { // random color code restrived from: https://stackoverf
 // Takes the provided pixel element and sets its color back to default
 function resetPixel(pixel) {
   pixel.style.backgroundColor = DEFAULT_COLOR;
+}
+
+function rotate(e) {
+  let pixels = document.getElementsByClassName("pixel");
+  if (e.keyCode === 39) {
+    rotation += 1;
+  }
+
+  if (e.keyCode === 37) {
+    rotation -= 1;
+  }
+  console.log(rotation);
+  for (var i = 0; i < pixels.length; i++) {
+    pixels[i].style.transform = `rotate(${rotation}deg)`;
+  }
 }
