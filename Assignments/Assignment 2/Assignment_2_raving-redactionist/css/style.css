@@ -25,3 +25,8 @@ body {
   text-decoration: underline; /* underlined! */
   color: red; /* Emergency! */
 }
+
+/*Reveals the found elements in green*/
+.found {
+  background-color: green; /* Secret Found! */
+}

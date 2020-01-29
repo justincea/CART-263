@@ -18,6 +18,10 @@ const UPDATE_FREQUENCY = 500;
 
 // A place to store the jQuery selection of all spans
 let $spans;
+let $secret;
+
+let secretsFound = 0; //Declared Variable for Secrets Found
+let secretsTotal = 0; //Declared VAriable for the Total of Secrets
 
 // When the document is loaded we call the setup function
 $(document).ready(setup);
@@ -27,22 +31,39 @@ $(document).ready(setup);
 // Sets the click handler and starts the time loop
 function setup() {
   // Save the selection of all spans (since we do stuff to them multiple times)
-  $spans = $('span');
+  $spans = $("span");
+  $secret = $(".secret");
   // Set a click handler on the spans (so we know when they're clicked)
-  $spans.on('click', spanClicked);
+  $spans.on("click", spanClicked);
   // Set an interval of 500 milliseconds to update the state of the page
   setInterval(update, UPDATE_FREQUENCY);
-};
+  //Calcutes the Total number of secrets Found
+  secretsTotal = $(".secret").length;
+  // Stores the results of TotalNumber into secretsTotal;
+  $("#TotalNumber").text(secretsTotal);
+  // Sets a mouseover event to all the secrets
+  $secret.on("mouseover", overSecrets);
+}
 
 // spanClicked()
 //
 // When a span is clicked we remove its revealed class and add the redacted class
 // thus blacking it out
 function spanClicked() {
-  $(this).removeClass('revealed');
-  $(this).addClass('redacted');
+  $(this).removeClass("revealed");
+  $(this).addClass("redacted");
 }
 
+function overSecrets() {
+  // Adds the found class to the element that was moused over so it highlights the secret in green
+  $(this).addClass("found");
+  // Turns off mouseover event
+  $(this).off("mouseover");
+  // Increases the counter variable by one
+  secretsFound += 1;
+  // Displays the results as a text at the bottom right corner of the screen.
+  $("#FoundNumber").text(secretsFound);
+}
 // update()
 //
 // Update is called every 500 milliseconds and it updates all the spans on the page
@@ -60,8 +81,8 @@ function update() {
 function updateSpan() {
   let r = Math.random();
   if (r < REVEAL_POSSIBILITY) {
-    $(this).removeClass('redacted');
-    $(this).addClass('revealed');
+    $(this).removeClass("redacted");
+    $(this).addClass("revealed");
   }
 }
 
