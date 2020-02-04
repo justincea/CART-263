@@ -4,32 +4,22 @@
 Activity - Eat Up
 Justin Cea
 *********************************************************************/
-let $mouth;
-let $fly;
+let $chest;
+let $coin;
 
 $(document).ready(setup);
 
 function setup() {
-  $mouth = $("#mouth");
-  $mouth.droppable({
+  $chest = $("#chest");
+  $chest.droppable({
     drop: onDrop
   });
 
-  $fly = $("#fly");
-  $fly.draggable();
+  $coin = $("#coin");
+  $coin.draggable();
 }
 
 function onDrop(event, ui) {
   console.log("Dropped");
   ui.draggable.remove();
-
-  setInterval(chew, 250);
-}
-
-function chew() {
-  if ($mouth.attr("src") === "assets/images/mouth_open.png") {
-    $mouth.attr("src", "assets/images/mouth_closed.png");
-  } else {
-    $mouth.attr("src", "assets/images/mouth_open.png");
-  }
 }
