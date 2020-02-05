@@ -1,3 +1,8 @@
+h1 {
+  font-size: 32px;
+  font-family: "Press Start 2P", cursive;
+}
+
 body {
   background-color: #595959;
   font-size: 50px;
@@ -6,6 +11,9 @@ body {
 }
 #chestDiv {
   position: fixed;
-  top: 500px;
-  left: 500px;
+  top: 90px;
+  left: 800px;
+}
+
+#coins {
 }

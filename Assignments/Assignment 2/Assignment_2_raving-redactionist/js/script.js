@@ -84,6 +84,19 @@ function updateSpan() {
     $(this).removeClass("redacted");
     $(this).addClass("revealed");
   }
+}if ( $(ui.draggable).hasClass("coin") === true){
+$(ui.draggable).remove();
+  }
+if ( $(ui.draggable).hasClass("coin2") === true){
+$(ui.draggable).remove();
+  }
+if ( $(ui.draggable).hasClass("coin3") === true){
+  $(ui.draggable).remove();
+    }
+    if ( $(ui.draggable).hasClass("coin4") === true){
+      $(ui.draggable).remove();
+        }
+}
 }
 
 // A version using anonymous functions if you're interested:
