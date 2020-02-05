@@ -5,7 +5,7 @@ Project 1
 Justin Cea
 
 Lucky Sisyphus, he's given the chance to become wealthy, but with his greediness,
-one coin is never enough. 
+one coin is never enough.
 *********************************************************************/
 //Declared variable for the chest and coins.
 let $chest;
@@ -30,7 +30,8 @@ let message = [
   "I thought you wanted to collect these coins?",
   "Don't you want to be wealthy?",
   "Keep going, you're almost done...",
-  "You'll be mad RICH with all dem coins boyo!"
+  "You'll be mad RICH with all dem coins boyo!",
+  "Don't be greedy now..."
 ];
 // Stores Music
 let coinSFX = new Audio("assets/sounds/coinSound.mp3");
