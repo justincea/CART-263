@@ -154,6 +154,22 @@ let correctAnimal;
 // How many possible answers there are per round
 
 const NUM_OPTIONS = 5;
+
+if (annyang) {
+  var commands = {
+    "I give up": function() {
+      givenUp();
+    }
+  };
+  annyang.addCommands(commands);
+
+  annyang.start();
+}
+
+function givenUp() {
+  $(".guess").toggle("highlight");
+  console.log("gaveUp");
+}
 // setup()
 //
 // We just start a new round right away!
