@@ -1,3 +1,5 @@
+Uncensored TV - Justin Cea
+
 For my second project, I decided to create project that reflects the idea of youtube not censoring certain videos for kids and how some of those videos potentially contain disturbing aspects to them. The goal of this project was to show the user that even if you search for a particular thing within the internet, following that research kids, teens or adults might stumble upon things that may come off as disturbing. In order to work the website, the user must say that they “want to watch” a show from the following list on the screen. Little do they know, that those images/gifs are not censored by the video hosting service that is before them.
 
 My inspiration for this whole project stemmed from James Bridle’s essay entitled “Something is wrong on the Internet”, and my experience at seeing kids watch disturbing things on the internet without them realizing it. I wanted to showcase Bridle’s idea of violent and inappropriate contents and show to the user that, videos like these exist within the internet, and are being sponsored for kids.
