@@ -17,7 +17,7 @@ if (annyang) {
     "I want to watch peppa pig": function() {
       peppaPig();
     },
-    "I want to watch elsa": function() {
+    "I want to watch frozen": function() {
       elsa();
     },
     "I want to watch minnie mouse": function() {
@@ -40,6 +40,15 @@ if (annyang) {
     },
     "I want to watch my little pony": function() {
       pony();
+    },
+    "I want to watch baby TV": function() {
+      baby();
+    },
+    "I want to watch Dave and Eva": function() {
+      daveEva();
+    },
+    "I want to watch Finger Family": function() {
+      fingerFamily();
     }
   };
   annyang.addCommands(commands);
@@ -53,36 +62,76 @@ $("#egg").click(function() {
 });
 function peppaPig() {
   console.log("peppa");
-  $("img").remove();
-  $('<img id="peppa" src="assets/images/peppa_pig.png">').appendTo("h1");
+  $(".appearImages").remove();
+  $(
+    '<img id="peppa"class = "appearImages" src="assets/images/peppa_pig.png">'
+  ).appendTo("h1");
+  console.log($(".appearImages"));
 }
 function elsa() {
-  $("img").remove();
-  $('<img id= "elsa" src="assets/images/elsa.png">').appendTo("h1");
+  $(".appearImages").remove();
+  $(
+    '<img id= "elsa" class = "appearImages"src="assets/images/elsa.png">'
+  ).appendTo("h1");
   console.log("elsa");
 }
 function mickeyMouse() {
-  $("img").remove();
-  $('<img id= "mM" src="assets/images/mickey_mouse.jpg">').appendTo("h3");
+  $(".appearImages").remove();
+  $(
+    '<img id= "mM" class = "appearImages"src="assets/images/mickey_mouse.jpg">'
+  ).appendTo("h3");
   console.log("mickey");
 }
 function minnieMouse() {
-  $("img").remove();
-  $('<img id="mMe" src="assets/images/minnie_mouse.png">').appendTo("h4");
+  $(".appearImages").remove();
+  $(
+    '<img id="mMe" class = "appearImages"src="assets/images/minnie_mouse.png">'
+  ).appendTo("h4");
   console.log("minnie");
 }
 function spiderman() {
-  $("img").remove();
-  $('<img id="spiderman" src="assets/images/spiderman.gif">').appendTo("h5");
+  $(".appearImages").remove();
+  $(
+    '<img id="spiderman" class = "appearImages"src="assets/images/spiderman.gif">'
+  ).appendTo("h5");
   console.log("spiderman");
 }
 function masha() {
-  $("img").remove();
-  $('<img id= "masha" src="assets/images/masha.png">').appendTo("h6");
+  $(".appearImages").remove();
+  $(
+    '<img id= "masha" class = "appearImages"src="assets/images/masha.png">'
+  ).appendTo("h6");
   console.log("masha");
 }
 
 function pony() {
-  $("img").remove();
-  $('<img id= "pony" src="assets/images/pony.gif">').appendTo("h7");
+  $(".appearImages").remove();
+  $(
+    '<img id= "pony" class = "appearImages" src="assets/images/pony.gif">'
+  ).appendTo("h7");
+}
+function spongebob() {
+  $(".appearImages").remove();
+  $(
+    '<img id= "spongebob" class = "appearImages"src="assets/images/spongebob.gif">'
+  ).appendTo("h8");
+}
+
+function baby() {
+  $(".appearImages").remove();
+  $(
+    '<img id= "baby" class = "appearImages"src="assets/images/baby.png">'
+  ).appendTo("h9");
+}
+function daveEva() {
+  $(".appearImages").remove();
+  $('<img id= "da" class = "appearImages"src="assets/images/da.png">').appendTo(
+    "h10"
+  );
+}
+function fingerFamily() {
+  $(".appearImages").remove();
+  $(
+    '<img id= "fingerFamily" class = "appearImages"src="assets/images/finger_family.gif">'
+  ).appendTo("h11");
 }
